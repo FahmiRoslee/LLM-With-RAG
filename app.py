@@ -19,7 +19,7 @@ SUBPROCESS_CWD = APP_DIR
 PYTHON_EXECUTABLE = sys.executable
 
 # --- Streamlit App ---
-st.title("Ask a Question to Your Documents")
+st.title("Ask a Question to Your Documentss")
 
 # Input field for the user's question
 user_question = st.text_input("Enter your question:")
