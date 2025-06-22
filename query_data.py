@@ -1,5 +1,5 @@
 import argparse
-from langchain.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain_ollama import OllamaLLM
 
