@@ -52,7 +52,7 @@ def query_rag(query_text: str):
     # print(prompt) # Keep this commented unless you want to see the prompt in logs
 
     ollama_base_url = "https://cold-sides-type.loca.lt"
-    st.info(f"Attempting to connect to Ollama at: {ollama_base_url}") 
+     print(f"DEBUG: Attempting to connect to Ollama at: {ollama_base_url}") 
 
     model = OllamaLLM(model="gemma3",base_url=ollama_base_url)
     response_text = model.invoke(prompt)
