@@ -7,3 +7,4 @@ chromadb
 langchain-chroma
 openai
 tiktoken
+pysqlite3-binary
