@@ -1,3 +1,13 @@
+# query_data.py
+
+# --- START of SQLite3 fix for ChromaDB ---
+# This block must be at the very top of the file,
+# before any imports that might use sqlite3 (e.g., langchain_chroma which imports chromadb)
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules['pysqlite3']
+# --- END of SQLite3 fix for ChromaDB ---
+
 import argparse
 from langchain_chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
@@ -39,7 +49,7 @@ def query_rag(query_text: str):
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(context=context_text, question=query_text)
-    # print(prompt)
+    # print(prompt) # Keep this commented unless you want to see the prompt in logs
 
     model = OllamaLLM(model="gemma3")
     response_text = model.invoke(prompt)
