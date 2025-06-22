@@ -51,8 +51,8 @@ def query_rag(query_text: str):
     prompt = prompt_template.format(context=context_text, question=query_text)
     # print(prompt) # Keep this commented unless you want to see the prompt in logs
 
-    ollama_base_url = "https://cold-sides-type.loca.lt"
-     print(f"DEBUG: Attempting to connect to Ollama at: {ollama_base_url}") 
+    ollama_base_url = "https://cold-sides-type.loca.lt" # This is the URL you copy from Colab
+    print(f"DEBUG: Attempting to connect to Ollama at: {ollama_base_url}") # Make sure this line's indentation matches the one below it
 
     model = OllamaLLM(model="gemma3",base_url=ollama_base_url)
     response_text = model.invoke(prompt)
