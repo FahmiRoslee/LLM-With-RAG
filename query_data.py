@@ -51,7 +51,7 @@ def query_rag(query_text: str):
     prompt = prompt_template.format(context=context_text, question=query_text)
     # print(prompt) # Keep this commented unless you want to see the prompt in logs
 
-    model = OllamaLLM(model="gemma3",base_url="https://66ea-2001-d08-db-8378-7039-6ffd-6a24-f21a.ngrok-free.app")
+    model = OllamaLLM(model="gemma3",base_url="https://725f-2001-d08-db-8378-7039-6ffd-6a24-f21a.ngrok-free.app")
     response_text = model.invoke(prompt)
 
     sources = [doc.metadata.get("id", None) for doc, _score in results]
