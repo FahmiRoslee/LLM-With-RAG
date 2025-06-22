@@ -6,7 +6,7 @@ import os
 # Define the base directory for your application in Colab
 # This should be the directory where your app.py and query_data.py reside
 # Example: If your app is in /content/gdrive/MyDrive/PSM_RAG_Chatbot/
-APP_DIR = "/content/gdrive/MyDrive/PSM_RAG_Chatbot/"
+APP_DIR = os.getcwd()
 
 # Script is in the same directory as app.py
 QUERY_SCRIPT_PATH = os.path.join(APP_DIR, "query_data.py")
