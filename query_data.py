@@ -51,7 +51,10 @@ def query_rag(query_text: str):
     prompt = prompt_template.format(context=context_text, question=query_text)
     # print(prompt) # Keep this commented unless you want to see the prompt in logs
 
-    model = OllamaLLM(model="gemma3",base_url="https://cold-sides-type.loca.lt")
+    ollama_base_url = "https://cold-sides-type.loca.lt"
+    st.info(f"Attempting to connect to Ollama at: {ollama_base_url}") 
+
+    model = OllamaLLM(model="gemma3",base_url=ollama_base_url)
     response_text = model.invoke(prompt)
 
     sources = [doc.metadata.get("id", None) for doc, _score in results]
